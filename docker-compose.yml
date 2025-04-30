@@ -1,0 +1,12 @@
+version: '3'
+
+services:
+  boj:
+    build: .
+    volumes:
+      - ./:/app
+      - ./zsh/zshrc:/root/.zshrc
+      - ./zsh/p10k.zsh:/root/.p10k.zsh
+    tty: true
+    stdin_open: true
+    command: zsh

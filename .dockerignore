@@ -1,0 +1,11 @@
+# 전부 기본적으로 무시
+*
+
+# 명시적으로 필요한 것만 포함
+!solving/**
+!zsh/**
+!hello.py
+!requirements.txt
+!Dockerfile
+!docker-compose.yml
+!README.md
