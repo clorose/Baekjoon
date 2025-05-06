@@ -1,0 +1,14 @@
+- name: 삼각수 기본 케이스
+  input: |
+    200
+  expected: "19"
+
+- name: 최소값 케이스
+  input: |
+    1
+  expected: "1"
+
+- name: 0 케이스
+  input: |
+    0
+  expected: "0"
