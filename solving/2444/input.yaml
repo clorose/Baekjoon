@@ -1,0 +1,4 @@
+- name: 기본 케이스
+  input: |
+    5
+  expected: "19"

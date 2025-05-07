@@ -8,7 +8,7 @@ solution_path = sys.argv[1]
 yaml_path = sys.argv[2]
 
 # Load test cases from YAML
-with open(yaml_path, 'r', encoding='utf-8') as f:
+with open(yaml_path, "r", encoding="utf-8") as f:
     cases = yaml.safe_load(f)
 
 # Tracking stats
@@ -17,24 +17,24 @@ fail_count = 0
 
 # Run each test case
 for idx, case in enumerate(cases, start=1):
-    name = case.get('name', f"Case {idx}")
-    input_data = case['input']
-    expected_output = case['expected'].strip().splitlines()
+    name = case.get("name", f"Case {idx}")
+    input_data = case["input"]
+    expected_output = case["expected"].strip().splitlines()
 
     # Write input to temp file
-    with tempfile.NamedTemporaryFile(mode='w+', delete=False) as tmp:
+    with tempfile.NamedTemporaryFile(mode="w+", delete=False) as tmp:
         tmp.write(input_data)
         tmp.flush()
         tmp_path = tmp.name
 
     try:
         result = subprocess.run(
-            ['python', solution_path],
+            ["python", solution_path],
             stdin=open(tmp_path),
             stdout=subprocess.PIPE,
             stderr=subprocess.PIPE,
             text=True,
-            timeout=5  # optional timeout
+            timeout=5,  # optional timeout
         )
     finally:
         os.unlink(tmp_path)  # clean up temp file

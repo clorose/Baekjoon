@@ -1,0 +1,9 @@
+- name: 기본 케이스
+  input: |
+    24 18
+  expected: "6\n72"
+
+- name: 확장 케이스
+  input: |
+    36 48
+  expected: "12\n144"
